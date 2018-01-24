@@ -31,6 +31,7 @@
 		30AE1116F7E3B396A46B33E6 /* Pods-HRGCD_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRGCD_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRGCD_Example/Pods-HRGCD_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		35B64FCCB0D907F953C1F0E4 /* Pods-HRGCD_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRGCD_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRGCD_Tests/Pods-HRGCD_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		55FFB6AE8FF640667748CB5A /* Pods-HRGCD_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRGCD_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HRGCD_Tests/Pods-HRGCD_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5C2F9D6F201824D300B87FA3 /* HRLoading.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HRLoading.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* HRGCD_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRGCD_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,9 +43,9 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		618B68950F503B7C6A72B506 /* Pods_HRGCD_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HRGCD_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		797D350DF8FE430E19FDBD66 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		84C7B46A053A42A136930B6E /* HRGCD.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HRGCD.podspec; path = ../HRGCD.podspec; sourceTree = "<group>"; };
-		9467B551F499A4C86870BAA0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		797D350DF8FE430E19FDBD66 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		84C7B46A053A42A136930B6E /* HRGCD.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HRGCD.podspec; path = ../HRGCD.podspec; sourceTree = "<group>"; };
+		9467B551F499A4C86870BAA0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BEB4081372813CE44C648FFA /* Pods_HRGCD_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HRGCD_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21C9AEE8F44FF5BA08BA930 /* Pods-HRGCD_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRGCD_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HRGCD_Example/Pods-HRGCD_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +154,7 @@
 		DBDF0AA51E17064AF810A47B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5C2F9D6F201824D300B87FA3 /* HRLoading.framework */,
 				618B68950F503B7C6A72B506 /* Pods_HRGCD_Example.framework */,
 				BEB4081372813CE44C648FFA /* Pods_HRGCD_Tests.framework */,
 			);
@@ -306,9 +308,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HRGCD_Tests/Pods-HRGCD_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HRLoading/HRLoading.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HRLoading.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

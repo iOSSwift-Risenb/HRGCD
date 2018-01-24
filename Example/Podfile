@@ -5,7 +5,6 @@ target 'HRGCD_Example' do
 
   target 'HRGCD_Tests' do
     inherit! :search_paths
-
     
   end
 end
